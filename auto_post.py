@@ -4,8 +4,8 @@ import json
 import time
 import requests
 
-IG_USER_ID = os.getenv("IG_USER_ID")
-ACCESS_TOKEN = os.getenv("IG_ACCESS_TOKEN")
+IG_USER_ID = os.getenv("IG_USER_ID", "").strip().strip('"').strip("'")
+ACCESS_TOKEN = os.getenv("IG_ACCESS_TOKEN", "").strip().strip('"').strip("'")
 GRAPH_API_VERSION = "v21.0"
 BASE_URL = f"https://graph.facebook.com/{GRAPH_API_VERSION}"
 POSTS_FILE = "posts.json"
